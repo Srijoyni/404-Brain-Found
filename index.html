@@ -1,13 +1,17 @@
-<div id="home"> </div>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
-<style type="text/css">*{
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schology</title>
+
+<style>
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial, sans-serif;
 }
-
 
 body{
     background:linear-gradient(135deg,#f8b7c8,#f6d1b7,#d8d6f3,#c7e9f3);
@@ -15,7 +19,7 @@ body{
     padding-bottom:80px;
 }
 
-
+/* HEADER */
 header{
     display:flex;
     justify-content:space-between;
@@ -25,11 +29,37 @@ header{
     color:white;
 }
 
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
 
-.logo{font-size:22px;font-weight:bold;}
-.hamburger{font-size:26px;cursor:pointer;}
+/* HAMBURGER */
+.hamburger{
+    font-size:26px;
+    cursor:pointer;
+}
 
+/* HIDDEN CHECKBOX */
+#menuToggle{
+    display:none;
+}
 
+/* OVERLAY */
+.overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+    z-index:9;
+}
+
+/* NAV */
 nav{
     position:fixed;
     top:0;
@@ -38,19 +68,20 @@ nav{
     height:100%;
     background:white;
     padding:20px;
-    transition:.3s;
+    transition:0.3s;
     z-index:10;
-    box-shadow:-2px 0 15px rgba(0,0,0,.2);
+    box-shadow:-2px 0 15px rgba(0,0,0,0.2);
 }
 
+nav ul{
+    list-style:none;
+}
 
-nav ul{list-style:none;}
 nav ul li{
     padding:14px 0;
     border-bottom:1px solid #ddd;
     cursor:pointer;
 }
-
 
 nav ul li a{
     text-decoration:none;
@@ -58,23 +89,47 @@ nav ul li a{
     display:block;
 }
 
-
+/* DROPDOWN */
 .dropdown{
     display:none;
     margin-left:12px;
 }
+
+nav ul li:hover .dropdown{
+    display:block;
+}
+
 .dropdown li{
     font-size:14px;
     color:#555;
 }
 
+/* CHECKBOX ACTIVE */
+#menuToggle:checked ~ nav{
+    right:0;
+}
 
+#menuToggle:checked ~ .overlay{
+    opacity:1;
+    visibility:visible;
+}
+
+/* MAIN */
 .main{
-    padding:70px 20px;
+    padding:90px 20px;
     text-align:center;
 }
-.main h1{font-size:34px;color:#5f2c82;}
-.main p{margin-top:10px;color:#444;}
+
+.main h1{
+    font-size:34px;
+    color:#5f2c82;
+}
+
+.main p{
+    margin-top:10px;
+    color:#444;
+}
+
 .main button{
     margin-top:18px;
     padding:10px 24px;
@@ -82,75 +137,88 @@ nav ul li a{
     color:white;
     border:none;
     border-radius:20px;
+    cursor:pointer;
+}
+
+/* FOOTER */
+footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    background:#000;
+    padding:18px 0 14px;
+    text-align:center;
+    z-index:999;
+}
+
+.footer-icons{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    margin-bottom:10px;
+}
+
+.footer-icons img{
+    width:24px;
 }
 </style>
-<header>
-<div class="logo">Schology</div>
+</head>
 
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+<body>
+
+<div id="home"></div>
+
+<!-- MENU CHECKBOX -->
+<input type="checkbox" id="menuToggle">
+
+<header>
+    <div class="logo">Schology</div>
+    <label for="menuToggle" class="hamburger">☰</label>
 </header>
 
-<nav id="menu">
+<!-- OVERLAY (clicking closes menu) -->
+<label for="menuToggle" class="overlay"></label>
+
+<nav>
 <ul>
-	<li><a href="#home">Home</a></li>
-	<li onclick="toggleDropdown()">Utilities ⌄
-	<ul class="dropdown" id="dropdown">
-		<li><a href="timetable.html">Timetables</a></li>
-		<li>Clubs</li>
-		<li>Events</li>
-		<li>Classroom</li>
-		<li>Class Representative</li>
-	</ul>
-	</li>
-	<li>Faculties</li>
-	<li>Contacts</li>
-	<li>FAQs</li>
-	<li>Help</li>
+    <li><a href="#home">Home</a></li>
+
+    <li>Utilities ⌄
+        <ul class="dropdown">
+            <li><a href="timetable.html">Timetables</a></li>
+            <li>Clubs</li>
+            <li>Events</li>
+            <li>Classroom</li>
+            <li>Class Representative</li>
+        </ul>
+    </li>
+
+    <li>Faculties</li>
+    <li>Contacts</li>
+    <li>FAQs</li>
+    <li>Help</li>
 </ul>
 </nav>
 
 <section class="main">
-<h1>Welcome to Schology</h1>
+    <h1>Welcome to Schology</h1>
+    <p>Your colourful campus companion 🎓</p>
+    <button>Explore Campus</button>
+</section>
 
-<p>Your colourful campus companion 🎓</p>
-<button>Explore Campus</button></section>
-<script>
-function toggleMenu(){
-    let menu=document.getElementById("menu");
-    menu.style.right=(menu.style.right==="0%")?"-100%":"0%";
-}
+<footer>
+    <div class="footer-icons">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png" alt="Facebook">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram.png" alt="Instagram">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn">
+    </div>
 
-
-function toggleDropdown(){
-    let d=document.getElementById("dropdown");
-    d.style.display=(d.style.display==="block")?"none":"block";
-}
-</script>
-
-<footer style="
-position:fixed;
-left:0;
-bottom:0;
-width:100%;
-background:#000;
-padding:18px 0 14px 0;
-text-align:center;
-z-index:999;
-"><!-- Icons -->
-<div style="
-display:flex;
-justify-content:center;
-gap:35px;
-margin-bottom:10px;
-"><!-- Email --><!-- Facebook --><!-- Instagram --><!-- LinkedIn --></div>
-<!-- Copyright -->
-
-<div style="
-color:#aaa;
-font-size:14px;
-font-family:Arial, sans-serif;
-">© 2025 | Team Schology</div>
-<div>
-    <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo possimus, sed expedita molestias, modi placeat fuga ad commodi quasi hic maxime dolore ullam doloremque deleniti. Asperiores adipisci sit animi quibusdam.</h1>
-</div>
+    <div style="color:#aaa;font-size:14px;">
+        © 2025 | Team Schology
+    </div>
 </footer>
+
+</body>
+</html>
