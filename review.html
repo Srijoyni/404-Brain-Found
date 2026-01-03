@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Review & Complaint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="
+    margin:0;
+    padding:25px;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#89f7fe,#66a6ff);
+    min-height:100vh;
+">
+
+<h1 style="
+    text-align:center;
+    color:#0d47a1;
+    margin-bottom:30px;
+    text-shadow:1px 1px 3px rgba(0,0,0,0.2);
+">
+    Student Review & Complaint Form
+</h1>
+
+<form style="
+    max-width:650px;
+    margin:auto;
+    background:#ffffff;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.25);
+">
+
+    <!-- Name -->
+    <label style="font-weight:bold; color:#0d47a1;">Student Name</label><br>
+    <input type="text" placeholder="Enter your name" required
+        style="width:100%; padding:12px; margin:8px 0 18px;
+        border-radius:10px; border:1px solid #ccc;">
+    
+    <!-- Roll -->
+    <label style="font-weight:bold; color:#0d47a1;">Roll Number</label><br>
+    <input type="text" placeholder="Enter roll number"
+        style="width:100%; padding:12px; margin:8px 0 18px;
+        border-radius:10px; border:1px solid #ccc;">
+
+    <!-- Department -->
+    <label style="font-weight:bold; color:#0d47a1;">Department</label><br>
+    <select required
+        style="width:100%; padding:12px; margin:8px 0 18px;
+        border-radius:10px; border:1px solid #ccc;">
+        <option value="">-- Select Department --</option>
+        <option>Computer Science</option>
+        <option>Mechanical Engineering</option>
+        <option>Electrical Engineering</option>
+        <option>Electronics</option>
+        <option>Physics</option>
+        <option>Chemistry</option>
+        <option>Mathematics</option>
+    </select>
+
+    <!-- Type -->
+    <label style="font-weight:bold; color:#0d47a1;">Type</label><br>
+    <select required
+        style="width:100%; padding:12px; margin:8px 0 18px;
+        border-radius:10px; border:1px solid #ccc;">
+        <option value="">-- Select --</option>
+        <option>Review / Feedback</option>
+        <option>Complaint</option>
+        <option>Suggestion</option>
+    </select>
+
+    <!-- Rating -->
+    <label style="font-weight:bold; color:#0d47a1;">Overall Rating</label><br>
+    <select
+        style="width:100%; padding:12px; margin:8px 0 18px;
+        border-radius:10px; border:1px solid #ccc;">
+        <option>⭐⭐⭐⭐⭐ Excellent</option>
+        <option>⭐⭐⭐⭐ Good</option>
+        <option>⭐⭐⭐ Average</option>
+        <option>⭐⭐ Poor</option>
+        <option>⭐ Very Poor</option>
+    </select>
+
+    <!-- Message -->
+    <label style="font-weight:bold; color:#0d47a1;">Your Message</label><br>
+    <textarea rows="5" placeholder="Write your complaint / review here..." required
+        style="width:100%; padding:12px; margin:8px 0 22px;
+        border-radius:10px; border:1px solid #ccc;"></textarea>
+
+    <!-- Submit -->
+    <button type="submit"
+        style="
+        width:100%;
+        padding:14px;
+        border:none;
+        border-radius:25px;
+        font-size:16px;
+        font-weight:bold;
+        color:white;
+        background:linear-gradient(135deg,#42a5f5,#1e88e5);
+        box-shadow:0 8px 18px rgba(0,0,0,0.25);
+        cursor:pointer;">
+        Submit Review / Complaint
+    </button>
+
+</form>
+
+<a href="index.html" style="
+    display:block;
+    text-align:center;
+    margin:35px auto 0;
+    max-width:220px;
+    padding:12px;
+    text-decoration:none;
+    font-weight:bold;
+    color:white;
+    border-radius:25px;
+    background:linear-gradient(135deg,#26a69a,#00796b);
+">
+    ⬅ Back to Home
+</a>
+
+</body>
+</html>
