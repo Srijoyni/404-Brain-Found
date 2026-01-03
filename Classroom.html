@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCC Portal | CR & Rooms</title>
+    <style>
+        /* -------- THEME & GENERAL STYLES -------- */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #fff1f5;
+            margin: 0;
+            padding: 20px;
+            color: #5a1f36;
+        }
+
+        h1, h2, h3 { text-align: center; color: #7a2e4a; }
+
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            background: #f7b2c4;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: #5a1f36;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover { background: #7a2e4a; color: white; }
+
+        /* -------- MAIN MENU GRID -------- */
+        #top { display: block; }
+        
+        .dept-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .dept-card {
+            background: #ffe4ec;
+            padding: 35px 15px;
+            text-align: center;
+            border-radius: 15px;
+            font-weight: bold;
+            color: #7a2e4a;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(122, 46, 74, 0.1);
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .dept-card:hover {
+            background: #f9c6d6;
+            transform: translateY(-5px);
+            border-color: #7a2e4a;
+        }
+
+        /* -------- NAVIGATION LOGIC -------- */
+        .dept-details { display: none; max-width: 1100px; margin: 0 auto; }
+        .dept-details:target { display: block; animation: fadeIn 0.4s; }
+        .dept-details:target ~ #top { display: none; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* -------- SHARED COMPONENT STYLES -------- */
+        .cr-section {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .cr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+        }
+
+        .cr-card {
+            background: #fff7fa;
+            border-left: 4px solid #f7b2c4;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+        }
+
+        .floor-label {
+            background: #7a2e4a;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin: 20px 0 10px 0;
+        }
+
+        .room-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 12px;
+        }
+
+        .room-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #ffe4ec;
+        }
+
+        .room-no { font-size: 1.2rem; font-weight: bold; color: #7a2e4a; display: block; }
+        .room-type { font-size: 0.7rem; color: #999; text-transform: uppercase; }
+        .assigned-to { 
+            margin-top: 8px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            color: #d81b60; 
+            background: #fff1f5;
+            padding: 3px;
+            border-radius: 4px;
+        }
+
+        .lab-badge {
+            background: #7a2e4a;
+            color: white;
+            padding: 1px 5px;
+            font-size: 0.6rem;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="top">
+        <h1>College Department Portal</h1>
+        <div class="dept-container">
+            <a class="dept-card" href="#cse">CSE</a>
+            <a class="dept-card" href="#aiml">CSE (AI & ML)</a>
+            <a class="dept-card" href="#ds">CSE (Data Science)</a>
+            <a class="dept-card" href="#it">IT</a>
+            <a class="dept-card" href="#ece">ECE</a>
+            <a class="dept-card" href="#ee">EE</a>
+        </div>
+    </div>
+
+    <div id="cse" class="dept-details">
+        <a href="#top" class="back-btn">← Back</a>
+        <h2>Computer Science & Engineering</h2>
+        <div class="cr-section">
+            <h3>CR Contacts</h3>
+            <div class="cr-grid">
+                <div class="cr-card"><strong>Sec A:</strong> Rahul S.</div>
+                <div class="cr-card"><strong>Sec B:</strong> Ananya D.</div>
+                <div class="cr-card"><strong>Sec C:</strong> Amit K.</div>
+                <div class="cr-card"><strong>Sec D:</strong> Priya S.</div>
+            </div>
+        </div>
+        <span class="floor-label">4th Floor</span>
+        <div class="room-grid">
+            <div class="room-card"><span class="room-no">N-401</span><span class="room-type">Classroom</span><div class="assigned-to">Sec A</div></div>
+            <div class="room-card"><span class="room-no">N-402</span><span class="room-type">Classroom</span><div class="assigned-to">Sec B</div></div>
+        </div>
+    </div>
+
+    <div id="aiml" class="dept-details">
+        <a href="#top" class="back-btn">← Back</a>
+        <h2>CSE (AI & ML)</h2>
+        <div class="cr-section">
+            <h3>CR Contact</h3>
+            <div class="cr-card" style="max-width:250px; margin:auto;"><strong>Group 1:</strong> To be assigned</div>
+        </div>
+        <span class="floor-label">5th Floor</span>
+        <div class="room-grid">
+            <div class="room-card"><span class="room-no">N-501</span><span class="room-type">Classroom</span><div class="assigned-to">AI & ML</div></div>
+            <div class="room-card"><span class="room-no">N-508 <span class="lab-badge">LAB</span></span><span class="room-type">AI Research Lab</span><div class="assigned-to">AI & ML</div></div>
+        </div>
+    </div>
+
+    <div id="ds" class="dept-details">
+        <a href="#top" class="back-btn">← Back</a>
+        <h2>CSE (Data Science)</h2>
+        <div class="cr-section">
+            <h3>CR Contact</h3>
+            <div class="cr-card" style="max-width:250px; margin:auto;"><strong>Group 1:</strong> To be assigned</div>
+        </div>
+        <span class="floor-label">6th Floor</span>
+        <div class="room-grid">
+            <div class="room-card"><span class="room-no">N-602</span><span class="room-type">Classroom</span><div class="assigned-to">Data Science</div></div>
+            <div class="room-card"><span class="room-no">N-610 <span class="lab-badge">LAB</span></span><span class="room-type">Big Data Lab</span><div class="assigned-to">Data Science</div></div>
+        </div>
+    </div>
+
+    <div id="it" class="dept-details">
+        <a href="#top" class="back-btn">← Back</a>
+        <h2>Information Technology</h2>
+        <div class="cr-section"><h3>CR Contact</h3><div class="cr-card"><strong>Sec A:</strong> Ishika Roy</div></div>
+        <span class="floor-label">2nd Floor</span>
+        <div class="room-grid">
+            <div class="room-card"><span class="room-no">N-202</span><span class="room-type">Classroom</span><div class="assigned-to">IT Sec A</div></div>
+        </div>
+    </div>
+
+    <div id="ece" class="dept-details"> <a href="#top" class="back-btn">← Back</a> <h2>ECE</h2> <p style="text-align:center;">Information being updated...</p> </div>
+    <div id="ee" class="dept-details"> <a href="#top" class="back-btn">← Back</a> <h2>EE</h2> <p style="text-align:center;">Information being updated...</p> </div>
+
+</body>
+</html>s

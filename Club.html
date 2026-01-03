@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>College Clubs</title>
+<style>
+body {
+    margin:0;
+    font-family: Arial,sans-serif;
+    background-color: #ffe6f0;
+}
+h1 { text-align:center; padding:20px; color:#d63384; }
+
+/* MAIN CLUB CARDS */
+.clubs {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
+    padding:20px;
+}
+.card {
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    width:280px;
+    text-align:center;
+    box-shadow:0 8px 15px rgba(0,0,0,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+.card:hover {
+    transform:translateY(-5px);
+    box-shadow:0 12px 20px rgba(0,0,0,0.15);
+}
+.card h2 { color:#d63384; margin:10px 0 5px 0; }
+.card p { color:#555; font-size:14px; }
+
+.card img {
+    width:100%;
+    height:150px;
+    border-radius:15px;
+    object-fit:cover;
+    margin-bottom:10px;
+}
+
+/* NESTED CARDS */
+.nested-card {
+    display:none;
+    margin:15px auto;
+    max-width:600px;
+    background:#fff0f5;
+    border-radius:20px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    text-align:left;
+}
+.nested-card h3 { color:#d63384; text-align:center; margin-top:0; }
+.section-title { font-weight:bold; margin-top:10px; color:#333; }
+.nested-card p { font-size:14px; color:#555; line-height:1.5; }
+
+/* BACK BUTTON */
+.back-btn {
+    display:block;
+    margin:15px auto 0 auto;
+    width:120px;
+    padding:10px 0;
+    text-align:center;
+    background-color:#d63384;
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+    cursor:pointer;
+}
+.back-btn:hover { background-color:#b92c6d; }
+
+</style>
+</head>
+<body>
+
+<h1>Our College Clubs</h1>
+
+<div class="clubs">
+
+    <!-- IgniteX -->
+    <div class="card" onclick="showCard('ignitex')">
+        <h2>IgniteX Club</h2>
+        <p>Technical Innovation & Coding</p>
+    </div>
+
+    <!-- GDG -->
+    <div class="card" onclick="showCard('gdg')">
+        <h2>GDG Club</h2>
+        <p>Google Developer Group</p>
+    </div>
+
+    <!-- RCC Techz -->
+    <div class="card" onclick="showCard('rcctechz')">
+        <h2>RCC Techz</h2>
+        <p>Projects & Technology Events</p>
+    </div>
+
+    <!-- Art & Cultural -->
+    <div class="card" onclick="showCard('artcultural')">
+        <h2>Art & Cultural Club</h2>
+        <p>Music, Art, Drama</p>
+    </div>
+
+</div>
+
+<!-- NESTED CARDS -->
+
+<!-- IgniteX Nested Card -->
+<div class="nested-card" id="ignitex">
+    <h3>IgniteX Club</h3>
+    <p class="section-title">Purpose</p>
+    <p>Encourages students to explore coding, robotics, and emerging technology trends.</p>
+    <p class="section-title">Activities / Events</p>
+    <p>Hackathons, robotics workshops, project exhibitions, and tech talks.</p>
+    <p class="section-title">Members / Leadership</p>
+    <p>Leader: Arjun Sharma<br>Organizer: Prof. Neha Roy<br>Members: Priya Sen, Rohan Das, Ananya Mukherjee</p>
+    <p class="section-title">Contact</p>
+    <p>Email: ignitex@college.edu | Phone: 9000000010</p>
+    <div class="back-btn" onclick="hideCard('ignitex')">← Back</div>
+</div>
+
+<!-- GDG Nested Card -->
+<div class="nested-card" id="gdg">
+    <h3>GDG Club</h3>
+    <p class="section-title">Purpose</p>
+    <p>Hands-on learning of Google technologies, web and mobile app development, and cloud solutions.</p>
+    <p class="section-title">Activities / Events</p>
+    <p>Coding competitions, workshops, Google Cloud & AI sessions.</p>
+    <p class="section-title">Members / Leadership</p>
+    <p>Leader: Rishabh Roy<br>Organizer: Prof. Tanvi Agarwal<br>Members: Ankit Verma, Sneha Gupta, Devika Chatterjee</p>
+    <p class="section-title">Facilities</p>
+    <p>Lab access, coding software tools, cloud accounts.</p>
+    <p class="section-title">Contact</p>
+    <p>Email: gdg@college.edu | Phone: 9000000011</p>
+    <div class="back-btn" onclick="hideCard('gdg')">← Back</div>
+</div>
+
+<!-- RCC Techz Nested Card -->
+<div class="nested-card" id="rcctechz">
+    <h3>RCC Techz</h3>
+    <p class="section-title">Purpose</p>
+    <p>Emphasizes innovation, project-based learning, and problem-solving in real-world tech applications.</p>
+    <p class="section-title">Activities / Events</p>
+    <p>Tech fairs, mini-project competitions, workshops on AI, IoT, cloud computing, and coding challenges.</p>
+    <p class="section-title">Members / Leadership</p>
+    <p>Leader: Siddharth Malhotra<br>Organizer: Prof. Rahul Banerjee<br>Members: Kavya Nair, Aditya Singh, Meera Das</p>
+    <p class="section-title">Facilities</p>
+    <p>Lab access, hardware kits, project resources.</p>
+    <p class="section-title">Contact</p>
+    <p>Email: rcctechz@college.edu | Phone: 9000000012</p>
+    <div class="back-btn" onclick="hideCard('rcctechz')">← Back</div>
+</div>
+
+<!-- Art & Cultural Nested Card -->
+<div class="nested-card" id="artcultural">
+    <h3>Art & Cultural Club</h3>
+    <p class="section-title">Purpose</p>
+    <p>Promotes creativity, artistic expression, and cultural awareness among students.</p>
+    <p class="section-title">Facilities / Activities</p>
+    <p>Music sessions, art workshops, drama performances, and cultural events.</p>
+    <p class="section-title">Members / Leadership</p>
+    <p>Leader: Ishita Roy<br>Organizer: Prof. Suman Das<br>Members: Rohan Das, Meera Das, Priya Sen</p>
+    <p class="section-title">Contact</p>
+    <p>Email: artcultural@college.edu | Phone: 9000000013</p>
+    <div class="back-btn" onclick="hideCard('artcultural')">← Back</div>
+</div>
+
+<script>
+function showCard(id){
+    // Hide all nested cards first
+    document.querySelectorAll('.nested-card').forEach(card => card.style.display='none');
+    // Show the selected card
+    document.getElementById(id).style.display='block';
+    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function hideCard(id){
+    document.getElementById(id).style.display='none';
+}
+</script>
+
+</body>
+</html>
