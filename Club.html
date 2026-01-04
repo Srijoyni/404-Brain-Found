@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>College Clubs</title>
+
 <style>
 body {
     margin:0;
-    font-family: Arial,sans-serif;
+    font-family: Arial, sans-serif;
     background-color: #ffe6f0;
 }
-h1 { text-align:center; padding:20px; color:#d63384; }
+
+h1 {
+    text-align:center;
+    padding:20px;
+    color:#d63384;
+}
 
 /* MAIN CLUB CARDS */
 .clubs {
@@ -19,6 +25,7 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     gap:25px;
     padding:20px;
 }
+
 .card {
     background:#fff;
     border-radius:20px;
@@ -29,15 +36,25 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     cursor:pointer;
     transition:0.3s;
 }
+
 .card:hover {
     transform:translateY(-5px);
     box-shadow:0 12px 20px rgba(0,0,0,0.15);
 }
-.card h2 { color:#d63384; margin:10px 0 5px 0; }
-.card p { color:#555; font-size:14px; }
 
+.card h2 {
+    color:#d63384;
+    margin:10px 0 5px 0;
+}
+
+.card p {
+    color:#555;
+    font-size:14px;
+}
+
+/* CLUB IMAGE */
 .card img {
-    width:100%;
+    width:55%;
     height:150px;
     border-radius:15px;
     object-fit:cover;
@@ -55,29 +72,47 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     box-shadow:0 8px 20px rgba(0,0,0,0.15);
     text-align:left;
 }
-.nested-card h3 { color:#d63384; text-align:center; margin-top:0; }
-.section-title { font-weight:bold; margin-top:10px; color:#333; }
-.nested-card p { font-size:14px; color:#555; line-height:1.5; }
+
+.nested-card h3 {
+    color:#d63384;
+    text-align:center;
+    margin-top:0;
+}
+
+.section-title {
+    font-weight:bold;
+    margin-top:10px;
+    color:#333;
+}
+
+.nested-card p {
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+}
 
 /* BACK BUTTON */
 .back-btn {
-            display: inline-block;
-            margin-bottom: 20px;
-            margin: 5px 0 20px 20px;
-            background: #f7b2c4;
-            padding: 10px 18px;
-            border-radius: 8px;
-            color: #5a1f36;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+    display:inline-block;
+    margin:5px 0 20px 20px;
+    background:#f7b2c4;
+    padding:10px 18px;
+    border-radius:8px;
+    color:#5a1f36;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
 
-.back-btn:hover { background: #7a2e4a; color: white; }
-
+.back-btn:hover {
+    background:#7a2e4a;
+    color:white;
+}
 </style>
 </head>
+
 <body>
+
 <a href="index.html" class="back-btn">← Back</a>
 <h1>Our College Clubs</h1>
 
@@ -85,31 +120,33 @@ h1 { text-align:center; padding:20px; color:#d63384; }
 
     <!-- IgniteX -->
     <div class="card" onclick="showCard('ignitex')">
+        <img src="ignitex.png" alt="IgniteX Club">
         <h2>IgniteX Club</h2>
         <p>Technical Innovation & Coding</p>
     </div>
 
     <!-- GDG -->
     <div class="card" onclick="showCard('gdg')">
+        <img src="gdg.png" alt="GDG Club">
         <h2>GDG Club</h2>
         <p>Google Developer Group</p>
     </div>
 
     <!-- RCC Techz -->
     <div class="card" onclick="showCard('rcctechz')">
+        <img src="rcctechz.png" alt="RCC Techz">
         <h2>RCC Techz</h2>
         <p>Projects & Technology Events</p>
     </div>
 
     <!-- Art & Cultural -->
     <div class="card" onclick="showCard('artcultural')">
+        <img src="art.png" alt="Art & Cultural Club">
         <h2>Art & Cultural Club</h2>
         <p>Music, Art, Drama</p>
     </div>
 
 </div>
-
-<!-- NESTED CARDS -->
 
 <!-- IgniteX Nested Card -->
 <div class="nested-card" id="ignitex">
@@ -119,7 +156,9 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     <p class="section-title">Activities / Events</p>
     <p>Hackathons, robotics workshops, project exhibitions, and tech talks.</p>
     <p class="section-title">Members / Leadership</p>
-    <p>Leader: Arjun Sharma<br>Organizer: Prof. Neha Roy<br>Members: Priya Sen, Rohan Das, Ananya Mukherjee</p>
+    <p>Leader: Arjun Sharma<br>
+       Organizer: Prof. Neha Roy<br>
+       Members: Priya Sen, Rohan Das, Ananya Mukherjee</p>
     <p class="section-title">Contact</p>
     <p>Email: ignitex@college.edu | Phone: 9000000010</p>
     <div class="back-btn" onclick="hideCard('ignitex')">← Back</div>
@@ -133,7 +172,9 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     <p class="section-title">Activities / Events</p>
     <p>Coding competitions, workshops, Google Cloud & AI sessions.</p>
     <p class="section-title">Members / Leadership</p>
-    <p>Leader: Rishabh Roy<br>Organizer: Prof. Tanvi Agarwal<br>Members: Ankit Verma, Sneha Gupta, Devika Chatterjee</p>
+    <p>Leader: Rishabh Roy<br>
+       Organizer: Prof. Tanvi Agarwal<br>
+       Members: Ankit Verma, Sneha Gupta, Devika Chatterjee</p>
     <p class="section-title">Facilities</p>
     <p>Lab access, coding software tools, cloud accounts.</p>
     <p class="section-title">Contact</p>
@@ -149,7 +190,9 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     <p class="section-title">Activities / Events</p>
     <p>Tech fairs, mini-project competitions, workshops on AI, IoT, cloud computing, and coding challenges.</p>
     <p class="section-title">Members / Leadership</p>
-    <p>Leader: Siddharth Malhotra<br>Organizer: Prof. Rahul Banerjee<br>Members: Kavya Nair, Aditya Singh, Meera Das</p>
+    <p>Leader: Siddharth Malhotra<br>
+       Organizer: Prof. Rahul Banerjee<br>
+       Members: Kavya Nair, Aditya Singh, Meera Das</p>
     <p class="section-title">Facilities</p>
     <p>Lab access, hardware kits, project resources.</p>
     <p class="section-title">Contact</p>
@@ -165,22 +208,25 @@ h1 { text-align:center; padding:20px; color:#d63384; }
     <p class="section-title">Facilities / Activities</p>
     <p>Music sessions, art workshops, drama performances, and cultural events.</p>
     <p class="section-title">Members / Leadership</p>
-    <p>Leader: Ishita Roy<br>Organizer: Prof. Suman Das<br>Members: Rohan Das, Meera Das, Priya Sen</p>
+    <p>Leader: Ishita Roy<br>
+       Organizer: Prof. Suman Das<br>
+       Members: Rohan Das, Meera Das, Priya Sen</p>
     <p class="section-title">Contact</p>
     <p>Email: artcultural@college.edu | Phone: 9000000013</p>
     <div class="back-btn" onclick="hideCard('artcultural')">← Back</div>
 </div>
 
 <script>
-function showCard(id){
-    // Hide all nested cards first
-    document.querySelectorAll('.nested-card').forEach(card => card.style.display='none');
-    // Show the selected card
-    document.getElementById(id).style.display='block';
-    document.getElementById(id).scrollIntoView({behavior:'smooth'});
+function showCard(id) {
+    document.querySelectorAll('.nested-card').forEach(card => {
+        card.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
-function hideCard(id){
-    document.getElementById(id).style.display='none';
+
+function hideCard(id) {
+    document.getElementById(id).style.display = 'none';
 }
 </script>
 
