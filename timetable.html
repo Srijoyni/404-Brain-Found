@@ -4,7 +4,7 @@
 <title>Timetables</title>  <style type="text/css">  
 body{  
     font-family:Arial, sans-serif;  
-    background:linear-gradient(135deg,#d8d6f3,#c7e9f3);  
+    background-color: #ffe6f0;
     padding:20px;  
 }  
 h1,h2{color:#5f2c82}  
@@ -74,8 +74,24 @@ button{
     background:#5f2c82;  
     color:white;  
 }  
-button:hover{opacity:.85}  
-</style>  </head>  <body>  <h1>Timetables</h1>  <h2>BTech</h2>  
+.back-btn:hover { background: #7a2e4a; color: white; }
+.back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            background: #f7b2c4;
+            padding: 10px 18px;
+            border-radius: 8px;
+            color: #5a1f36;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+</style> 
+ </head>
+   <body>  
+    <a href="index.html" class="back-btn">← Back</a>
+    <h1>Timetables</h1>  <h2>BTech</h2>  
 <div class="grid">  
     <div class="card" onclick="openSem('BTech CSE')">Computer Science</div>  
     <div class="card" onclick="openSem('BTech IT')">Information Technology</div>  
@@ -207,4 +223,8 @@ document.getElementById("routinePop").style.display="none";
 </script>
 
 </body>  
-</html>  Keep a good back option to redirect to home page
+<<<<<<< HEAD
+</html>
+=======
+</html>  
+>>>>>>> 71aba2d101d74b7e50e6928394cf92b9f3acee36
